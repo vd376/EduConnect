@@ -1,0 +1,36 @@
+<mat-card class="h-100 p-5">
+    <mat-card-header style="justify-content: center;" class="mb-5">
+        <mat-card-title>Choose a semester, university location, and level of study</mat-card-title>
+    </mat-card-header>
+    <form class="text-align-center" #form="ngForm" (ngSubmit)="onSubmit(form.value)" style="margin: auto; width: 600px;">
+        <div>
+            <mat-label>Fall / Spring Term:</mat-label>
+            <mat-radio-group aria-label="Select a semester" [(ngModel)]="selectedSemester" name="semester"
+                style="display: flex; flex-direction: column;">
+                <mat-radio-button value="12024">Spring 2024</mat-radio-button>
+                <mat-radio-button value="92023">Fall 2023</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <hr>
+        <div>
+            <mat-label>Location:</mat-label>
+            <div>
+                <mat-checkbox [(ngModel)]="isNewBrunswick" name="newBrunswick">New Brunswick</mat-checkbox>
+            </div>
+            <div>
+                <mat-checkbox [(ngModel)]="isNewark" name="newark">Newark</mat-checkbox>
+            </div>
+        </div>
+        <hr>
+        <div>
+            <mat-label>Level:</mat-label>
+            <!-- <div>
+                <mat-checkbox [(ngModel)]="isUndergraduate" name="undergraduate">Undergraduate</mat-checkbox>
+            </div> -->
+            <div>
+                <mat-checkbox [(ngModel)]="isGraduate" name="graduate">Graduate</mat-checkbox>
+            </div>
+        </div>
+        <button class="mt-4" mat-raised-button color="primary" type="submit">Continue</button>
+    </form>
+</mat-card>
